@@ -26,9 +26,9 @@ Whoa! It works!
 ## Contributors
 
 Right now, the project is only getting developed by:
-[Hamza Waqas](mailto: hamzahwaqas@gmail.com)
-[Kevin Habich](http://kevinhabich.com)
+* [Hamza Waqas](mailto: hamzahwaqas@gmail.com)
+* [Kevin Habich](http://kevinhabich.com)
 
 You can also follow us on Twitter:
-[Kevando](https://twitter.com/candylocker)
-[HamzaWaqas](https://twitter.com/HamzaWaqas)
+* [Kevando](https://twitter.com/candylocker)
+* [HamzaWaqas](https://twitter.com/HamzaWaqas)
