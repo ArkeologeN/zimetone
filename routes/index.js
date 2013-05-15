@@ -4,5 +4,13 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+    var team = req.param('team');
+    if ( typeof(team) == 'undefined') {
+        // Load popup screen.
+        res.render('join', { title: 'Express' });
+
+    } else {
+        // Make Rest calls etc.
+        res.render('index', { title: 'Express' });
+    }
 };
