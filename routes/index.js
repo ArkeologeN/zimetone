@@ -2,6 +2,7 @@
 /*
  * GET home page.
  */
+var time = require('time');
 
 exports.index = function(req, res){
     var team = req.param('team');
@@ -12,23 +13,25 @@ exports.index = function(req, res){
     } else {
         // Make Rest calls etc.
         var locs = {
-			"us": "America/Chicago",
-			"pk": "Asia/Karachi",
-			"aus": "Australia/Sydney"
+			"Chicago": {
+					time: (new time.Date()).setTimezone("America/Chicago"),
+			},
+			"Karachi": {
+					time: (new time.Date()).setTimezone("Asia/Karachi"),
+			},
+			"Sydney": {
+					time: (new time.Date()).setTimezone("Australia/Sydney"),
+			},
+			"Paris": {
+					time: (new time.Date()).setTimezone("Europe/Paris"),
+			}
 		}
-        var time = require('time');
+		
+
         res.render('index', 
 			{ 
-				title: 'Express',
-				time: [
-					(new time.Date()).setTimezone(locs['us']),
-					(new time.Date()).setTimezone(locs['pk']),
-					(new time.Date()).setTimezone(locs['aus']),
-				]
+				title: team,
+				locs: locs
 			});
     }
 };
-
-function _dateMaker(d) {
-	var months = []
-}

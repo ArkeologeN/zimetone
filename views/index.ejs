@@ -1,16 +1,17 @@
 
 <% layout('layout/boilerplate') -%>
  <div class="gridster">
-          <ul>
-	          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-				<h1>Chicago</h1>
-				<h2>December 25, 2009</h2>
-				<h3>4:22 P.M.</h3>
-			  </li>
-	          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">2</li>
-			  <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">3</li>
-	          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">4</li>
-
-
-          </ul>
+		<ul>
+		<% 
+		c = 1
+		for (loc in locs) { %>
+			<% var city = locs[loc] %>
+			<li data-row="<%- c  %><% c == 1 ? ++c : --c %>" data-col="1" data-sizex="1" data-sizey="1">
+				<h1><%- loc %></h1>
+				<h2><%- formatDate(city.time) %></h2>
+				<h3><%- formatTime(city.time) %></h3>
+			</li>
+		<% } %>
+		</ul>
+		
       </div>
