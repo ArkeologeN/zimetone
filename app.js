@@ -12,7 +12,7 @@ app.configure(function(){
     app.set('views', __dirname + '/views');
     app.set('view engine', 'ejs');
     app.use(express.favicon());
-    app.use(express.logger('dev'));
+    //app.use(express.logger('dev'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(express.cookieParser('your secret here'));
@@ -23,7 +23,7 @@ app.configure(function(){
 
 app.engine('ejs',engine);
 
-app.locals.formatDate = function (date) {
+app.locals.formatStamp = function (date) {
 	var months = [
 		"January", "Febrary", "March",
 		"April", "May","June", "July",
@@ -35,18 +35,16 @@ app.locals.formatDate = function (date) {
 			"Saturday", "Sunday"
 		]
 		
-	return months[date.getMonth()]+" "+ date.getDate()+", "+date.getFullYear()
+	var hours = date.getHours()
+		, minutes = date.getMinutes()
+		,ampm = hours >= 12 ? 'pm' : 'am';
+	  hours = hours % 12;
+	  hours = hours ? hours : 12; // the hour '0' should be '12'
+	  minutes = minutes < 10 ? '0'+minutes : minutes;
+		
+	return months[date.getMonth()]+" "+ date.getDate()+", "+date.getFullYear()+" "+hours + ':' + minutes + ' ' + ampm
 }
 
-app.locals.formatTime = function(date) {
-	var hours = date.getHours()
-	, minutes = date.getMinutes()
-	,ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-	return strTime = hours + ':' + minutes + ' ' + ampm
-}
 
 
 app.configure('development', function(){

@@ -8,6 +8,8 @@
   "dependencies": {
     "express": "3.0.5",
     "ejs": "*",
-    "ejs-locals": "~1.0.2"
+    "ejs-locals": "~1.0.2",
+    "async": "~0.2.9",
+    "request": "~2.22.0"
   }
 }

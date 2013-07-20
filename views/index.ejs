@@ -8,8 +8,8 @@
 			<% var city = locs[loc] %>
 			<li data-row="<%- c  %><% c == 1 ? ++c : --c %>" data-col="1" data-sizex="1" data-sizey="1">
 				<h1><%- loc %></h1>
-				<h2><%- formatDate(city.time) %></h2>
-				<h3><%- formatTime(city.time) %></h3>
+				<h2><%- formatStamp(city.time) %></h2>
+				<h2><%- city.geo.main.temp %></h2>
 			</li>
 		<% } %>
 		</ul>
