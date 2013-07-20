@@ -11,6 +11,24 @@ exports.index = function(req, res){
 
     } else {
         // Make Rest calls etc.
-        res.render('index', { title: 'Express' });
+        var locs = {
+			"us": "America/Chicago",
+			"pk": "Asia/Karachi",
+			"aus": "Australia/Sydney"
+		}
+        var time = require('time');
+        res.render('index', 
+			{ 
+				title: 'Express',
+				time: [
+					(new time.Date()).setTimezone(locs['us']),
+					(new time.Date()).setTimezone(locs['pk']),
+					(new time.Date()).setTimezone(locs['aus']),
+				]
+			});
     }
 };
+
+function _dateMaker(d) {
+	var months = []
+}

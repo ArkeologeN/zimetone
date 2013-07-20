@@ -1,4 +1,9 @@
 <% layout('layout/boilerplate') -%>
+	<ul>
+<% for (var x = 0; x < time.length; x++) { %>
+<li><%- time[x] %></li>
+<% } %>
+</ul>
 <div class="gridster">
      <ul>
          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
