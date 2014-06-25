@@ -10,6 +10,8 @@
     "ejs": "*",
     "ejs-locals": "~1.0.2",
     "async": "~0.2.9",
-    "request": "~2.22.0"
+    "request": "~2.22.0",
+    "moment": "~2.7.0",
+    "moment-timezone": "~0.1.0"
   }
 }
